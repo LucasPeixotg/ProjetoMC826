@@ -52,10 +52,19 @@ for i in range(len(rank_l1)):
     pos_l2[rank_l2[i]] = i + 1
     pos_linf[rank_linf[i]] = i + 1
 
-# A montagem da tabela a seguir foi feita com auxílio de IA 
-# devido minha incompetência com matplotlib
+# A montagem da tabela a seguir foi feita com auxílio de IA, visto que  a estética de plotagem em 
+# matplotlib é apenas um meio visual de apresentação, não o objeto de avaliação teórica
 
-colunas = ["Amostra (i)", "x_i^T", "d_L1", "Rank L1", "d_L2", "Rank L2", "d_L∞", "Rank L∞"]
+colunas = [
+    r"Amostra ($i$)",
+    r"$\mathbf{x}_i^T$",
+    r"$d_{L_1}$",
+    r"Rank $L_1$",
+    r"$d_{L_2}$",
+    r"Rank $L_2$",
+    r"$d_{L_\infty}$",
+    r"Rank $L_\infty$"
+]
 linhas = []
 for i in range(len(X_data)):
     linhas.append([
@@ -88,7 +97,7 @@ for j in range(len(colunas)):
     celula.set_facecolor("#2c3e50")
     celula.set_text_props(color="white", weight="bold")
 
-plt.title("Distâncias até x_novo = [6.0, 20.0]^T e Ranking dos Vizinhos", pad=12, weight="bold")
+plt.title("Distâncias até $x_{novo} = [6.0, 20.0]^T$ e Ranking dos Vizinhos", pad=12, weight="bold")
 plt.tight_layout()
 plt.savefig("tabela_distancias_q1.png", dpi=300, bbox_inches="tight")
 plt.show()
